@@ -1,6 +1,6 @@
 /**
  * Frio Energy Services — Grok chat widget
- * Talks to POST /api/chat on the same origin (API key stays on server).
+ * Talks to POST https://api.frioenergyservices.com/api/chat (API key stays on server).
  */
 (function () {
   var history = [];
@@ -111,7 +111,7 @@
       send.disabled = true;
       var thinking = addBubble(messages, "bot", "Thinking…");
 
-      fetch("/api/chat", {
+      fetch("https://api.frioenergyservices.com/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: text, history: history.slice(0, -1) }),

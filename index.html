@@ -738,7 +738,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var origHTML = btn.innerHTML;
     btn.innerHTML = 'Sending...';
     btn.disabled = true;
-    fetch('/api/quote', {
+    fetch('https://api.frioenergyservices.com/api/quote', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data)
